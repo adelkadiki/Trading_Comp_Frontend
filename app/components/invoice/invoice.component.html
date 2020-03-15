@@ -1,0 +1,58 @@
+
+
+    
+    <div id="invoice">
+        <h3>British Gate Ltd</h3>
+<p>Invoice #: {{sales.id}}</p>
+<p>Date: {{sales.date}}</p>
+<p >Bill to: <span id="bill">{{sales.client}}</span></p> 
+<p>{{client.address}}</p>
+<p>{{client.phone}}</p>
+
+<table class="table table-hover" style="text-align: center;"> 
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>    
+        </tr>
+        
+    </thead>
+   
+    <tbody>
+        
+           
+           
+    <tr *ngFor="let i of item">
+        
+            <td>{{i.product}}</td>
+             <td>{{i.price}}</td>
+             <td>{{i.quantity}}</td>
+
+         
+             <td>{{totalValue(i.price, i.quantity)}}</td>
+                                 
+    </tr>
+
+    <tr>
+        <td style="font-size: large; font-weight: 700;">Total</td>
+        <td></td>
+        <td></td>
+        <td style="font-size: large; font-weight: 700;">{{sales.total}}</td>
+    </tr>
+ 
+    </tbody>
+
+
+    
+</table>
+<p style="margin-top: 25px;" class="butom">British Gate Ltd</p>
+<p class="butom">Email: info@britishgate.co.uk</p>
+<p class="butom">www.britishgate.co.uk</p>
+</div>
+
+ <button (click)="pdfDownload()" class="btn btn-primary">Print</button>
+ <button (click)="salesList()" class="btn btn-secondary">Sales</button>

@@ -1,0 +1,18 @@
+<p>{{errorMessage}}</p>
+<form  (ngSubmit)="login()" #form="ngForm" novalidate>
+    <div class="col-4">
+    <div class="form-group">
+    <label>Username</label>
+    <input type="text" name="username" id="username" [(ngModel)]="username" #user="ngModel" class="form-control" required>
+    </div>   
+    </div>
+
+    <div class="col-4">
+    <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password" id="password"  [(ngModel)]="password" #pass="ngModel" class="form-control" required>
+</div>
+</div>
+    <button type="submit" class="btn btn-secondary">Sing in</button>
+
+</form>

@@ -1,0 +1,72 @@
+<table class="table">
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th><button class="btn btn-secondary" (click)="addProduct()">Add product</button></th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    
+        <tbody>
+    
+            <tr>
+                <td>{{vendor.contact}}</td>
+                <td>{{vendor.email}}</td>
+                <td>{{vendor.website}}</td>
+                <td>{{vendor.address}}</td>
+                <td>{{vendor.phone}}</td>
+                <td><button class="btn btn-warning" (click)="updateVendor(vendor.id)">Update</button></td>
+                <td><button class="btn btn-danger" (click)="deleteVendor(vendor.id)">Delete</button></td>
+               
+    
+            </tr>
+    
+        </tbody>
+    
+    
+    
+    </table>
+    
+    <!-- product section -->
+    <table class="table">
+    
+        <thead class="thead-dark"> 
+        
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Manufacturer</th>
+                <th>Origin</th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        
+            <tbody>
+        
+                <tr *ngFor="let p of products">
+                    <td>{{p.name}}</td>
+                    <td>{{p.description}}</td>
+                    <td>{{p.origin}}</td>
+                    <td>{{p.manufacturer}}</td>
+                    <td><button class="btn btn-warning" (click)="updateProduct(p.id)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="confirm(p.id)">Delete</button></td>
+                </tr>
+        
+            </tbody>
+        
+        
+        
+        </table>
+        <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+
+
+       

@@ -1,0 +1,30 @@
+<table class="table">
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Manufacturer</th>
+            <th>Origin</th>           
+             <th><button class="btn btn-info">Add new product</button></th>
+        </tr>
+    </thead>
+    
+        <tbody>
+    
+            <tr *ngFor="let p of product">
+                <td>{{p.name}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.manufacturer}}</td>
+                <td>{{p.origin}}</td>
+                <td><button class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button></td>
+    
+            </tr>
+    
+        </tbody>
+    
+    
+    
+    </table>
+    <button class="btn btn-primary" (click)="vendorPage()">Vendor page</button>

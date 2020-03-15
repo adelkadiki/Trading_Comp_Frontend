@@ -1,0 +1,15 @@
+#delete{
+    margin-top: 20px;
+    margin-right: 5%;
+    background-color: #e55a44;
+}
+
+#cancel{
+    margin-top: 20px;
+    background-color: #8aa29f;
+}
+
+#diag{
+    width: 250px;
+    text-align: center;
+}

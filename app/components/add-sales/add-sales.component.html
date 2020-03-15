@@ -1,0 +1,114 @@
+<div class="container">
+
+<h5>Add sales</h5>
+
+<form name="salesForm" [formGroup]="salesForm" (ngSubmit)="addSales()">
+
+    <div class="form-group">
+    <label>Client</label>
+    <select formControlName="client" class="form-control" >
+        
+        <option *ngFor="let clt of clients" [ngValue]="clt.company">{{clt.company}}</option>
+
+    </select>
+    </div>
+    
+    <div formArrayName="items">
+
+
+        <div *ngFor="let p of itemsArray.controls; let i=index">
+            <div [formGroupName]="i">
+             <div class="card border-info mb-3" >
+                 <div class="card-body text-primary">
+                     Item
+                   </div>
+                   
+                   <div class="card-body">
+ <div class="row">
+                    <div  class="col-8">
+                    <label>Product</label>
+                    <select formControlName="product" class="form-control">
+                        
+                        <option *ngFor="let prd of products" [ngValue]="prd.name">{{prd.name}}</option>
+                
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label>Quantity</label>
+                    <input type="text" formControlName="quantity" class="form-control" (keyup)="onChanges($event)">
+                    <div style="color: red;">{{qntMsg}}</div>
+                </div>
+</div><br>
+
+<div class="row">     
+    
+                    <!-- <label>Expiration</label>
+                    <input type="date" formControlName="expiration"> -->
+
+                    <label>Expiratoin date</label>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="myDatepicker" formControlName="expiration">
+                        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker></mat-datepicker>
+                      </mat-form-field>
+    
+                
+                    <div class="col-7">
+                    <label>Unit Price</label>
+                    <input type="text" formControlName="price" (keyup)="pricInput($event)" class="form-control">
+                    <div style="color: red;">{{prcMsg}}</div>
+                </div>
+                   
+</div>
+
+         </div>
+         <button type="button" (click)="removeItem(i)" class="btn btn-info">Remove this Item</button>
+     </div>
+     
+             </div>  
+            
+         </div>  
+
+</div>
+<button type="button" class="btn btn-secondary" (click)="addItem()">Add Item</button> <br><br>
+
+<div class="row">
+    
+<label>Paid</label>
+    <input type="checkbox" formControlName="paid" > 
+
+    <!-- <label>Date</label>
+    <input type="date" formControlName="date"> -->
+<label>Date</label>
+    <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+
+    <br>
+
+
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <label>Total</label>
+    <input type="text" formControlName="total" class="form-control" > <br>
+    </div>
+    
+    
+</div>
+<br> 
+<div class="row">
+    <label>Notices</label>
+    <textarea formContolName="notices" maxlength="150" style="resize: none;"></textarea>
+</div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+ 
+    
+    </div>
+    

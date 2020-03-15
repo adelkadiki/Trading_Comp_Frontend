@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h5>Add product to {{vendor}}</h5>
+
+    <form name="addProductForm" [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+    
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+            </div>
+               </div>
+               <div class="col-6">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" formControlName="description">
+            </div>
+               </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-6">
+                 <div class="form-group">
+                     <label>Manufacturer</label>
+                     <input type="text" class="form-control" formControlName="manufacturer">
+                 </div>
+                </div>
+         
+         
+                <div class="col-6">
+                 <div class="form-group">
+                     <label>Origin</label>
+                     <input type="text" class="form-control" formControlName="origin">
+                 </div>
+                </div>
+          
+         </div>
+    <button class="btn btn-primary">Submit</button>
+    </form>
+    <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
+    

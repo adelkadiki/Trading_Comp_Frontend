@@ -1,0 +1,37 @@
+<table class="table">
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Payment</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            
+            
+        </tr>
+    </thead>
+    
+        <tbody>
+    
+            <tr *ngFor="let s of sales">
+                <td>{{s.client}}</td>               
+                <td>{{s.date}}</td>
+                <td>
+                    <div *ngIf="s.paid; else elseBlock">paid</div>
+                    <ng-template #elseBlock>not paid</ng-template>
+                    
+                </td>
+                <td><button class="btn btn-primary" (click)="invoice(s.id)">Invoice</button></td>
+                <td><button class="btn btn-secondary" (click)="salesInfo(s.id)">Details</button></td>
+                <td><button class="btn btn-danger" (click)="confirm(s.id)">Delete</button></td>
+            </tr>
+    
+        </tbody>
+
+        
+
+    
+    </table>

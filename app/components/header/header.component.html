@@ -1,0 +1,20 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+        <div class="navbar-brand">Trading System</div>
+
+        <ul class="navbar-nav">
+                    
+                    <li><a *ngIf="service.isLoggedin()" class="nav-link" routerLink="/welcome">Main</a></li>
+                    <li><a *ngIf="service.isLoggedin()" class="nav-link" routerLink="/addvendor">New Vendor</a></li>
+                    <li><a *ngIf="service.isLoggedin()" class="nav-link" routerLink="/addclient">New Client</a></li>
+                    <li><a *ngIf="service.isLoggedin()" class="nav-link" routerLink="/addsales">Add Sales</a></li>
+                    
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li><a *ngIf="!service.isLoggedin()" class="nav-link">Login</a></li> -->
+            <li><a *ngIf="service.isLoggedin()" routerLink="/logout" class="nav-link">Logout</a></li>
+        </ul>
+
+    </nav>
+</header>

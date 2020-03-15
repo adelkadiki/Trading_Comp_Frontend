@@ -1,0 +1,45 @@
+p{
+    line-height: 0.8;
+}
+
+h3{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.7em;
+    
+}
+
+
+#bill{
+    
+    font-weight: 800;
+   
+}
+
+table{
+    text-align: center;
+    border: 1px solid black;
+   
+   
+}
+
+#invoice{
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4%;
+}
+
+.btn-primary{
+    margin-left: 45%;
+    margin-right: 10px;
+}
+
+.btn{
+    margin-bottom: 2%;
+}
+
+.butom{
+    font-weight: 700;
+    font-size: 1em;
+}

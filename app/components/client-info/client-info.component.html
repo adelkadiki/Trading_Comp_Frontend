@@ -1,0 +1,31 @@
+<table class="table">
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th><button class="btn btn-danger" (click)="confirm(client.id)">Delete client</button></th>
+            
+            
+        </tr>
+    </thead>
+    
+        <tbody>
+    
+            <tr>
+                <td>{{client.contact}}</td>
+                <td>{{client.company}}</td>
+                <td>{{client.phone}}</td>
+                <td>{{client.address}}</td>
+                <td></td>
+            </tr>
+    
+        </tbody>
+    
+    
+    
+    </table>
+<button class="btn btn-secondary" (click)="list()">Back to Clients List</button>

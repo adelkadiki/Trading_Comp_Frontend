@@ -1,0 +1,74 @@
+<table class="table">
+
+<thead class="thead-dark"> 
+
+    <tr>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Website</th>
+        <th>Address</th>
+        <th>Phone</th>
+        
+        
+    </tr>
+</thead>
+
+    <tbody>
+
+        <tr *ngFor="let v of vendors">
+            <td>{{v.contact}}</td>
+            <td>{{v.email}}</td>
+            <td>{{v.website}}</td>
+            <td>{{v.address}}</td>
+            <td>{{v.phone}}</td>
+            
+           
+
+        </tr>
+
+    </tbody>
+
+
+
+</table>
+
+<!-- product section -->
+<table class="table">
+
+    <thead class="thead-dark"> 
+    
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Origin</th>
+            <th>Manufacturer</th>
+            
+        </tr>
+    </thead>
+    
+        <tbody>
+    
+            <tr *ngFor="let p of products">
+                <td>{{p.name}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.origin}}</td>
+                <td>{{p.manufacturer}}</td>
+                
+            </tr>
+    
+        </tbody>
+    
+    
+    
+    </table>
+
+    <div class="row">
+    <button class="btn btn-primary" (click)="list()">vendors list</button>
+    <div *ngFor="let v of vendors">
+        <button class="btn btn-secondary" (click)="edit(v.id)">Edit this vendor</button>
+    </div>
+    </div>
+    
+
+<!-- end -->
+

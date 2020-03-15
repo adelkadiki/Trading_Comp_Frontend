@@ -1,0 +1,20 @@
+.mat-row:hover {
+    background-color: cadetblue;
+  }
+
+  #container{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .mat-header-cell {
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+  }
+  
+  .mat-cell {
+    text-align: center;
+    justify-content:center;
+  }
+  
